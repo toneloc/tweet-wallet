@@ -2,9 +2,15 @@
 
 *IN DEVELOPMENT, ROPSTEN TESTNET ONLY*
 
-
-
 TweetWallet gives ownership of contracted-controlled ether to the proven owners of Twitter accounts. 
+
+## Overview
+
+![Create a new TweetWallet](https://github.com/toneloc/tweet-wallet/blob/master/createImage.png)
+
+![Look at the balances](https://github.com/toneloc/tweet-wallet/blob/master/balancesImage.png)
+
+![Claim a Tweet Wallet](https://github.com/toneloc/tweet-wallet/blob/master/claimImage.png)
 
 ## Getting Started
 
@@ -26,22 +32,25 @@ In one terminal tab:
 truffle develop
 ```
 
-This will
+This will start a local ethereum blockchain, most likley on port 9545, or else 8545. 
+
+In same terminal:
 
 ```
-truffle compile
+truffle compile  // the word "truffle" being optional in truffle console
 ```
 
 ```
-truffle --reset
+truffle migrate // the word "truffle" being optional in truffle console
 ```
-
 
 In a second terminal:
 
 ```
 truffle develop --log
 ```
+
+This will tail local blockchain activity. 
 
 In a third:
 
@@ -51,10 +60,11 @@ npm run dev
 
 Browser should open at localhost port 3000.
 
-Attach 
+Attach Metamask to localhost port 9545. Can claim local testnet accounts preloaded with Ether by importing following DEN seed words into MetaMask
 
-
-
+```
+candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
+```
 
 ### Prerequisites
 
@@ -64,7 +74,7 @@ MetaMask, Etherscan, the Oraclize Remix IDE, MyEtherWallet, and of course, Twitt
 
 ### Running contract
 
-Can deploy with web3.js - 
+Can deploy contract with web3.js. Will be expenesive until further optimizations - 
 
 ```
 var _username = /* var of type string here */ ;
@@ -87,6 +97,10 @@ var dieselprice.sol:tweetwallet = dieselprice.sol:tweetwalletContract.new(
 
 Automated tests forthcoming.
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
 <!-- 
 
 ## Built With
@@ -95,23 +109,12 @@ Automated tests forthcoming.
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
 * **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
