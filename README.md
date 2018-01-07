@@ -6,7 +6,19 @@ TweetWallet gives ownership of contracted-controlled ether to the proven owners 
 
 ## Overview
 
-![Create a new TweetWallet](https://github.com/toneloc/tweet-wallet/blob/master/createImage.png)
+Basic steps:
+1. Create a TweetWallet by submitting a username to Etherem blockchain. New TweetWallets are instances of the "TweetWallet" contract (see .sol file) and are generated using the factory pattern.
+2. Endow TweetWallet, essentially a bounty on proven ownership of a Twitter account.
+3. To claim, follow these steps:
+   1. Publish a public tweet following this precise pattern "$addressOfContractToClaim,$addressToSendFundsTo"
+      - e.g. 
+   2. 
+4. Trigger claim method on TweetWallet instance you are claiming, submmitting the status of the tweet above.
+
+
+See UI/UX screenshots below:
+
+![Create a new TweetWallet](https://github.com/toneloc/tweet-wallet/blob/master/createImage.png =25x))
 
 ![Look at the balances](https://github.com/toneloc/tweet-wallet/blob/master/balancesImage.png)
 
