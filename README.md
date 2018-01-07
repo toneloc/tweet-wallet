@@ -1,14 +1,60 @@
-# Project Title
+# TweetWallet
 
-*In DEVELOPMENT, TESTNET ONLY*
+*IN DEVELOPMENT, ROPSTEN TESTNET ONLY*
+
+
 
 TweetWallet gives ownership of contracted-controlled ether to the proven owners of Twitter accounts. 
 
 ## Getting Started
 
-Install MetaMask.
+Install Truffle - https://www.truffleframework.com
 
-Or play with deployed version of this contract on the Ropsten Test network - 
+Install MetaMask - https://metamask.io/
+
+```
+git clone
+```
+
+```
+npm install
+```
+
+In one terminal tab:
+
+```
+truffle develop
+```
+
+This will
+
+```
+truffle compile
+```
+
+```
+truffle --reset
+```
+
+
+In a second terminal:
+
+```
+truffle develop --log
+```
+
+In a third:
+
+```
+npm run dev
+```
+
+Browser should open at localhost port 3000.
+
+Attach 
+
+
+
 
 ### Prerequisites
 
