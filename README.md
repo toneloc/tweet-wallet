@@ -1,6 +1,8 @@
-# TweetWallet Overview and Motivation
+# TweetWallet 
 
 *IN DEVELOPMENT, TESTNET ONLY*
+
+##Overview and Motivation
 
 TweetWallet gives ownership of contracted-controlled ether to the proven owners of Twitter accounts. Private key management is very painfu, but key management by individuals is essential for decentralized P2P money. It will likely be difficulty to improve upon security and convenience of identity-management already offered by tech giants, with conveniences such as 2-factor auth, huge databases for centralized fraud detection, etc. Therefore: a middle ground between personal ownership of keys and leveraging tech giant’s security will be useful.
 
