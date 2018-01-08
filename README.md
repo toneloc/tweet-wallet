@@ -29,11 +29,11 @@ The bootstrap front end and jQuery communicate with Ethereum network via web3.js
 
 ## UI/UX screenshots
 
-![Create a new TweetWallet](https://github.com/toneloc/tweet-wallet/blob/master/createImage.png))
+<img src="https://github.com/toneloc/tweet-wallet/blob/master/createImage.png" alt="Create a new TweetWallet" width="528">
 
-![Look at the balances](https://github.com/toneloc/tweet-wallet/blob/master/balancesImage.png)
+<img src="https://github.com/toneloc/tweet-wallet/blob/master/balancesImage.png" alt="Create a new TweetWallet" width="528">
 
-![Claim a Tweet Wallet](https://github.com/toneloc/tweet-wallet/blob/master/claimImage.png)
+<img src="https://github.com/toneloc/tweet-wallet/blob/master/claimImage.png" alt="Create a new TweetWallet" width="528">
 
 ## Getting Started
 
