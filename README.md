@@ -41,7 +41,7 @@ npm install -g truffle
 Install MetaMask Chrome browser extension - https://metamask.io/
 
 ```
-git clone
+git clone https://github.com/toneloc/tweet-wallet.git
 ```
 
 ```
