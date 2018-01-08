@@ -4,14 +4,17 @@
 
 ## Overview and Motivation
 
-TweetWallet gives ownership of contracted-controlled ether to the proven owners of Twitter accounts. Private key management is very painfu, but key management by individuals is essential for decentralized P2P money. It will likely be difficulty to improve upon security and convenience of identity-management already offered by tech giants, with conveniences such as 2-factor auth, huge databases for centralized fraud detection, etc. Therefore: a middle ground between personal ownership of keys and leveraging tech giant’s security will be useful.
+TweetWallet gives ownership of contract-controlled ether to the proven owners of Twitter accounts. 
 
-A potential solution is to offload key management to (1) smart contracts and (2) security experts at the tech giants. The proposed solution in this repo uses Ethereum smart contracts relying on oraclize.it to do HTTP requests to prove ownership of online accounts.
-User-defined rules can authorize transactions.
+The motivation is to improve the state of private key management. Private key management is very painful for users, but key management by individuals is essential for decentralized P2P money. It will be difficult to improve upon security and convenience of identity-management already offered by tech giants, with conveniences such as 2-factor auth, machine-trained fraud detection techniques, human judgment, etc. 
 
-Previous implementation, such as at ChangeTip (aqui-hired by AirBnB in 2016) were good ideas, but centralized. Transactions and verification was not on-chain, but in ChangeTip's databases. 
+Therefore, a middle ground between personal ownership of keys and state-of-the-art security and ease of use will be useful. A potential solution is to offload key management to (1) smart contracts and (2) the regular-old security experts at the tech giants. The proposed solution in this repo uses Ethereum smart contracts relying on oraclize.it to do HTTP requests to prove ownership of online Twitter accounts.
 
-Numerous technical challenges remain. First, online (social media) accounts are often trusted third parties. This can be partially solved by using several accounts for verification and requiring a threshold of approvals. Or any URL may be used to signal acceptance of a bounty, not just third parties. A second concernt is that Oraclize.it is also, to a large extent, a trusted third party. Perhaps new technologies will come along which can serve as a sort of lottery-based oracle service, diminishing the canonical role of any one oracle. The problem of oracles, however, is very difficult to solve and won't go away soon. Thirdly, SSL / TLS is very difficult to understand, and the concept of TLS Notary is still young. Finally, technical implementation challenges remain significant and Ethereum smart contract tools remain elementary. 
+Previous implementations of social media controlled crypto, such as at ChangeTip (aqui-hired by AirBnB in 2016) were good ideas, but in pratice were centralized. Transactions and verification was not on-chain, but in ChangeTip's databases. This implementation is slighlty more decentralized but still relies on an oracle
+
+Numerous technical challenges remain. First, online (social media) accounts are often trusted third parties. This can be partially solved by using several accounts for verification, other websites hosted in different places, and requiring the accrual of a minimum multisignature threshold of approvals. A second concern is that Oraclize.it is also, to a very large extent, a trusted third party. However, Oraclize is used in several largescale distributed applications already. Perhaps new technologies will come along which can serve as a sort of lottery-based oracle service, diminishing the canonical role of any one oracle. The problem of oracles will not go away soon. Thirdly, SSL / TLS is very difficult to understand, and the concept of TLS Notary is still young. Finally, technical implementation challenges remain significant and Ethereum smart contract tools remain elementary. Oraclize's and another strings library were used. Parsing tools can go haywire and regular expression rendered useless upon site redesigns. 
+
+The bootstrap front end and jQuery communicate with Ethereum network via web3.js calls. 
 
 ## Basic Steps
 
