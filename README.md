@@ -8,17 +8,16 @@ TweetWallet gives ownership of contracted-controlled ether to the proven owners 
 
 Basic steps:
 1. Create a TweetWallet by submitting a username to Etherem blockchain. New TweetWallets are instances of the "TweetWallet" contract (see .sol file) and are generated using the factory pattern.
-2. Endow TweetWallet, essentially a bounty on proven ownership of a Twitter account.
+2. Endow TweetWallet, essentially a bounty on proven ownership of a Twitter account, by sending ether to the contract address
 3. To claim, follow these steps:
    1. Publish a public tweet following this precise pattern "$addressOfContractToClaim,$addressToSendFundsTo"
-      - e.g. 
-   2. 
-4. Trigger claim method on TweetWallet instance you are claiming, submmitting the status of the tweet above.
-
+      - e.g. "0xFdA6118f7496eC899C31839dB12C66aA5e556003,0x627306090abab3a6e1400e9345bc60c78a8bef57"
+   2. Trigger claim() method on TweetWallet instance you are claiming, submmitting the status of the tweet above.
+      - e.g. Status will look something like "948272796251914720"
 
 See UI/UX screenshots below:
 
-![Create a new TweetWallet](https://github.com/toneloc/tweet-wallet/blob/master/createImage.png =25x))
+![Create a new TweetWallet](https://github.com/toneloc/tweet-wallet/blob/master/createImage.png))
 
 ![Look at the balances](https://github.com/toneloc/tweet-wallet/blob/master/balancesImage.png)
 
@@ -113,24 +112,9 @@ Automated tests forthcoming.
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-<!-- 
-
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
- -->
+* [Truffle](http://truffleframework.com/) - Truffle framework 
+* [Metamask](https://metamask.io/) - Metamask
+* [My Ether Wallet](https://www.myetherwallet.com/)
+* [Oraclize Remix](http://dapps.oraclize.it/browser-solidity/#gist=9817193e5b05206847ed1fcd1d16bd1d&version=soljson-v0.4.19+commit.c4cbbb05.js)
