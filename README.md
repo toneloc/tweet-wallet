@@ -1,21 +1,28 @@
-# TweetWallet
+# TweetWallet Overview and Motivation
 
-*IN DEVELOPMENT, ROPSTEN TESTNET ONLY*
+*IN DEVELOPMENT, TESTNET ONLY*
 
-TweetWallet gives ownership of contracted-controlled ether to the proven owners of Twitter accounts. 
+TweetWallet gives ownership of contracted-controlled ether to the proven owners of Twitter accounts. Private key management is very painfu, but key management by individuals is essential for decentralized P2P money. It will likely be difficulty to improve upon security and convenience of identity-management already offered by tech giants, with conveniences such as 2-factor auth, huge databases for centralized fraud detection, etc. Therefore: a middle ground between personal ownership of keys and leveraging tech giant’s security will be useful.
 
-## Overview
+A potential solution is to offload key management to (1) smart contracts and (2) security experts at the tech giants. The proposed solution in this repo uses Ethereum smart contracts relying on oraclize.it to do HTTP requests to prove ownership of online accounts.
+User-defined rules can authorize transactions.
 
-Basic steps:
-1. Create a TweetWallet by submitting a username to Etherem blockchain. New TweetWallets are instances of the "TweetWallet" contract (see .sol file) and are generated using the factory pattern.
+Previous implementation, such as at ChangeTip (aqui-hired by AirBnB in 2016) were good ideas, but centralized. Transactions and verification was not on-chain, but in ChangeTip's databases. 
+
+Numerous technical challenges remain. First, online (social media) accounts are often trusted third parties. This can be partially solved by using several accounts for verification and requiring a threshold of approvals. Or any URL may be used to signal acceptance of a bounty, not just third parties. A second concernt is that Oraclize.it is also, to a large extent, a trusted third party. Perhaps new technologies will come along which can serve as a sort of lottery-based oracle service, diminishing the canonical role of any one oracle. The problem of oracles, however, is very difficult to solve and won't go away soon. Thirdly, SSL / TLS is very difficult to understand, and the concept of TLS Notary is still young. Finally, technical implementation challenges remain significant and Ethereum smart contract tools remain elementary. 
+
+## Basic Steps
+
+1. Create a TweetWallet by submitting a username to Etherem blockchain. New TweetWallets are instances of the "TweetWallet" contract (see "contracts" folder) and are generated using the factory pattern.
 2. Endow TweetWallet, essentially a bounty on proven ownership of a Twitter account, by sending ether to the contract address
 3. To claim, follow these steps:
    1. Publish a public tweet following this precise pattern "$addressOfContractToClaim,$addressToSendFundsTo"
       - e.g. "0xFdA6118f7496eC899C31839dB12C66aA5e556003,0x627306090abab3a6e1400e9345bc60c78a8bef57"
    2. Trigger claim() method on TweetWallet instance you are claiming, submmitting the status of the tweet above.
       - e.g. Status will look something like "948272796251914720"
+      - Contract will concatenate URL, Oraclize will query URL and return, contract will parse Tweet and pay out
 
-See UI/UX screenshots below:
+## UI/UX screenshots
 
 ![Create a new TweetWallet](https://github.com/toneloc/tweet-wallet/blob/master/createImage.png))
 
@@ -25,9 +32,13 @@ See UI/UX screenshots below:
 
 ## Getting Started
 
-Install Truffle - https://www.truffleframework.com
+Install Truffle
 
-Install MetaMask - https://metamask.io/
+```
+npm install -g truffle
+```
+
+Install MetaMask Chrome browser extension - https://metamask.io/
 
 ```
 git clone
@@ -77,15 +88,11 @@ Attach Metamask to localhost port 9545. Can claim local testnet accounts preload
 candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
 ```
 
-### Prerequisites
-
-Truffle and OpenZepplin recommended for frameworks, testing, and sample code. 
-
-MetaMask, Etherscan, the Oraclize Remix IDE, MyEtherWallet, and of course, Twitter!, are recommended for testing. 
+Play around with UI. Can generate new contracts and send ether. Oraclize will not work locally, must either mock receipt of funds or deploy to Ropsten to test with Oraclize. Can use Oraclize's 
 
 ### Running contract
 
-Can deploy contract with web3.js. Will be expenesive until further optimizations - 
+Can deploy parent contract manually with web3.js or a tool like My Ether Wallet. Will be expenesive until further optimizations - 
 
 ```
 var _username = /* var of type string here */ ;
