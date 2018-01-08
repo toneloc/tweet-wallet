@@ -90,7 +90,7 @@ Attach Metamask to localhost port 9545. Can claim local testnet accounts preload
 candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
 ```
 
-Play around with UI. Can generate new contracts and send ether. Oraclize will not work locally, must either mock receipt of funds or deploy to Ropsten to test with Oraclize. Can use Oraclize's 
+Play around with UI. Can generate new contracts and send ether. Oraclize will not work locally, must either mock receipt of funds or deploy to Ropsten to test with Oraclize. Can use Oraclize's [Remix IDE](dapps.oraclize.it/browser-solidity/#gist=9817193e5b05206847ed1fcd1d16bd1d&version=soljson-v0.4.19+commit.c4cbbb05.js).
 
 ### Running contract
 
