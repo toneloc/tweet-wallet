@@ -51,9 +51,13 @@ npm install -g truffle
 
 Install MetaMask Chrome browser extension - https://metamask.io/
 
+Clone this repo:
+
 ```
 git clone https://github.com/toneloc/tweet-wallet.git
 ```
+
+Install Node packages:
 
 ```
 npm install
@@ -70,11 +74,13 @@ This will start a local ethereum blockchain, most likley on port 9545, or else 8
 In same terminal:
 
 ```
-truffle compile  // the word "truffle" being optional in truffle console
+truffle compile  // The word "truffle" being optional in truffle console
 ```
 
+Then:
+
 ```
-truffle migrate // the word "truffle" being optional in truffle console
+truffle migrate // The word "truffle" being optional in truffle console
 ```
 
 In a second terminal:
@@ -99,7 +105,31 @@ Attach Metamask to localhost port 9545. Can claim local testnet accounts preload
 candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
 ```
 
-Play around with UI. Can generate new contracts and send ether. Oraclize will not work locally, must either mock receipt of funds or deploy to Ropsten to test with Oraclize. Can use Oraclize's [Remix IDE](dapps.oraclize.it/browser-solidity/#gist=9817193e5b05206847ed1fcd1d16bd1d&version=soljson-v0.4.19+commit.c4cbbb05.js).
+Play around with UI. Can generate new contracts and send ether. Oraclize will not work locally, must either mock receipt of funds or deploy to Ropsten to test with Oraclize. Can use Oraclize's [Remix IDE](dapps.oraclize.it/browser-solidity/#gist=9817193e5b05206847ed1fcd1d16bd1d&version=soljson-v0.4.19+commit.c4cbbb05.js). Also can deploy with Ropsten. Edit truffle.js file to below to add to Ropsten - 
+
+```
+module.exports = {
+    networks: {
+        development: {
+            host: "localhost",
+            port: 8545,
+            network_id: "*" // Match any network id
+        },
+        ropsten:  {
+            network_id: 3,
+            host: "localhost",
+            port:  8545,
+            gas:   4100000
+        }
+    },
+    rpc: {
+        host: 'localhost',
+        post:8080
+    }
+};
+```
+
+Instance of deployed parent contract can be found on Ropsten at [0x10d900A873739e0537e0dB8Da34a6F82BFCe4682](https://ropsten.etherscan.io/address/0x10d900a873739e0537e0db8da34a6f82bfce4682).
 
 ### Running contract
 
