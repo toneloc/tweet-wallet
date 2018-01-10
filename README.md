@@ -2,6 +2,12 @@
 
 *IN DEVELOPMENT, TESTNET ONLY*
 
+## Table of Contents
+  - [Overview and Motivation](#overview-and-motivation)
+  - [Basic Steps](#basic-steps)
+  - [UI-UX screenshots](#ui-ux-screenshots)
+  - [Getting Started - run locally](#getting-started)
+
 ## Overview and Motivation
 
 TweetWallet gives ownership of contract-controlled ether to the proven owners of Twitter accounts. 
@@ -27,7 +33,7 @@ The bootstrap front end and jQuery communicate with Ethereum network via web3.js
       - e.g. Status will look something like "948272796251914720"
       - Contract will concatenate URL, Oraclize will query URL and return, contract will parse Tweet and pay out
 
-## UI/UX screenshots
+## UI-UX screenshots
 
 <img src="https://github.com/toneloc/tweet-wallet/blob/master/createImage.png" alt="Create a new TweetWallet" width="528">
 
