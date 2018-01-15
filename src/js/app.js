@@ -104,11 +104,11 @@ App = {
     },
 
     handleClaim: function (event, button) {
-        // get status
-
         event.preventDefault();
-        var username = button.closest('tr').find('td:eq(0)').text();
-        console.log(username);
+        var contractAddress = $('#address-fill > p').text().toString().trim();
+        var status = $('#status-id').val().toString();
+        console.log(status);
+        console.log(contractAddress);
 
         var tweetWalletInstance;
 
@@ -117,12 +117,14 @@ App = {
                 console.log(error);
             }
 
-            App.contracts.TweetWallet.deployed().then(function (instance) {
+            App.contracts.TweetWallet.at(contractAddress).then(function (instance) {
                 tweetWalletInstance = instance;
 
-                return tweetWalletInstance.claim("939668776513097730");
+                return tweetWalletInstance.claim(status);
             }).then(function (result) {
-                alert('Transfer Successful!');
+                alert('Transfer processed. Please allow several blocks to be mined and then re-check balances.');
+                $('#claimModal').modal('toggle');
+                $('#balances-table').find("tr:gt(0)").remove();
                 return App.getBalances();
             }).catch(function (err) {
                 console.log(err.message);
